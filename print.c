@@ -6,7 +6,7 @@
  * @args: it a list of variadic function
  * Return: 0;
  */
-int _print(const char *format, va_list args)
+void _print(const char *format, va_list args)
 {
 	int i, j;
 	char *s;
@@ -35,5 +35,4 @@ int _print(const char *format, va_list args)
 		else
 			_putchar(format[i]);
 	}
-	return (0);
 }
