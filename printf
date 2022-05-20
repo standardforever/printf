@@ -1,0 +1,47 @@
+#include "main.h"
+		
+/**
+ * _printf - it print an input
+ * @format: it's a pointer to a string
+ * Description:  it takes a string and check if it sees '%s' or '%c, if yes
+ *               it takes the matched argumetn from arg_list and print it.
+ * Return: it returns the string pointered to by format.
+ */
+
+int _printf(const char *format, ...)
+{
+	int i = 0, k = 0, j, count;
+	const char *s;
+	va_list arg;
+
+	va_start(arg, format), count = 0;
+	for (i = 0; format[i]; i++)
+	{
+		if (format[i] == '%' && format[i + 1] == '\0')
+		{
+			_putchar(format[i]);
+			k++, count++;
+		}
+		else if (format[i] == '%' && format[i + 1] == 'c')
+		{
+			_putchar(va_arg(arg, int));
+			i++;
+		}
+		else if (format[i] == '%' && format[i + 1] == 's')
+		{
+			s = va_arg(arg, const char *);
+			while (s[j])
+			{
+				_putchar(s[j]);
+				j++;
+			}
+			i++, j = 0;
+		}
+		else
+		{
+			putchar(format[i]);
+		}
+	}
+	va_end(arg);
+	//return (0);
+}
