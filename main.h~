@@ -8,6 +8,7 @@
 #include <stdlib.h>
 int _printf(const char *format, ...);
 int _putchar(char c);
+//void _count(const char *fst, va_list args);
 int _count_char(const char *format, va_list arg);
 int _count_str(const char *format, va_list arg);
 
