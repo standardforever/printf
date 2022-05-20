@@ -58,6 +58,7 @@ char *_alloc_mem(int count)
  * @f: pointer to a function of malloc
  * @count: the number of memory to be alllocated
  * Return: the printed string
+ */
 int print(const char *format, va_list arg, char *(*f)(int), int count)
 {
 	int i, j, k, count1;
@@ -103,6 +104,7 @@ int print(const char *format, va_list arg, char *(*f)(int), int count)
  * @format: the formated string it use to print
  * Return: the printed outcome to stdout
  */
+
 int _printf(const char *format, ...)
 {
 	int count2, print1;

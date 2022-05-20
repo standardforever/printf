@@ -95,7 +95,7 @@ int print(const char *format, va_list arg, char *(*f)(int), int count)
 			count1++;
 		}
 	}
-	return (write(1, str, 105));
+	return (write(1, str, count1));
 
 }
 
