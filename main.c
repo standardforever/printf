@@ -2,5 +2,6 @@
 
 int main(void)
 {
-	_printf("this %  is a %s", " in these code");
+	_printf("this %c  is a ", 'c');
+	return (0);
 }
