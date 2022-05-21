@@ -1,7 +1,0 @@
-#include "main.h"
-
-int main(void)
-{
-	_printf("this %c  is a ", " in these code");
-	return (0);
-}
