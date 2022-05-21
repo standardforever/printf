@@ -13,7 +13,7 @@ int _print(const char *format, va_list args)
 
 	checker = percentage(format);
 	if (checker == -1)
-		return (-1);
+		return (0);
 
 	if (*format != '\0')
 	{
@@ -40,5 +40,5 @@ int _print(const char *format, va_list args)
 	}
 	return (count);
 	}
-	return (-1);
+	return (0);
 }
