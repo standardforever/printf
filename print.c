@@ -10,6 +10,13 @@ int _print(const char *format, va_list args)
 {
 	int i, j, checker = 0, count = 0;
 	const char *s;
+//	for (i = 0; format[i]; i++)
+//	{ 
+//		if (format[i] == '%' && format[i + 1] != 's')
+//		       return (0);
+//		if(format[i] == '%' && format[i + 1] != 'c')
+//			return (0);	
+//	}
 
 	checker = percentage(format);
 	if (checker == -1)
@@ -39,6 +46,22 @@ int _print(const char *format, va_list args)
 			_putchar(format[i]), count++;
 	}
 	return (count);
+<<<<<<< HEAD
+
 	}
+	else
+	{ 
+		
+		return (0); 
+		
+	}
+=======
+	}
+<<<<<<< HEAD
 	return (-1);
+=======
+	else
+		return (-1);
+>>>>>>> 6929dff6e4f723c0013277c5de01396a5b42e82d
+>>>>>>> 6c14bf60a1ef4536ff7d1a1b146d3b53e145d343
 }
