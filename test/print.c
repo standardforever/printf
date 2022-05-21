@@ -11,6 +11,8 @@ int _print(const char *format, va_list args)
 	int i, j, count = 0;
 	const char *s;
 
+	if (*format != '\0')
+	{
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%' && format[i + 1] != '\0')
@@ -23,11 +25,12 @@ int _print(const char *format, va_list args)
 					break;
 				case 's':
 					s = va_arg(args, const char *);
-					for (j = 0; s[j] != '\0'; j++, count++)
+					for (j = 0; s[j]; j++, count++)
 						_putchar(s[j]);
 					i++;
 					break;
 				default:
+					_putchar(format[i]);
 					count++;
 					break;
 			}
@@ -36,4 +39,7 @@ int _print(const char *format, va_list args)
 			_putchar(format[i]), count++;
 	}
 	return (count);
+	}
+	else
+		return (-1);
 }

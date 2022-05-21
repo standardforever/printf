@@ -8,37 +8,45 @@
  */
 int _print(const char *format, va_list args)
 {
-	int i, j, count = 0;
+	int i, j, state = 0, checker = 0, count = 0;
 	const char *s;
+
+	checker = percentage(format);
+	if (checker == - 1)
+		return (-1);
 
 	if (*format != '\0')
 	{
-	for (i = 0; format[i]; i++)
-	{
-		if (format[i] == '%' && format[i + 1] != '\0')
+		for (i = 0; format[i]; i++)
 		{
-			switch (format[i + 1])
+			if (format[i] == '%' && format[i + 1] != '\0')
 			{
-				case 'c':
-					_putchar(va_arg(args, int));
-					i++, count++;
-					break;
-				case 's':
-					s = va_arg(args, const char *);
-					for (j = 0; s[j]; j++, count++)
-						_putchar(s[j]);
-					i++;
-					break;
-				default:
-					_putchar(format[i]);
-					count++;
-					break;
+				switch (format[i + 1])
+				{
+					case 'c':
+						_putchar(va_arg(args, int));
+						i++, count++;
+						break;
+					case 's':
+						s = va_arg(args, const char *);
+						for (j = 0; s[j]; j++, count++)
+							_putchar(s[j]);
+						i++;
+						break;
+					default:
+						state = 1;
+						//utchar(format[i]);
+						count++;
+						break;
+				}
+		
 			}
+			else if (state == 1)
+				return (-1);
+			else
+				_putchar(format[i]), count++;
 		}
-		else
-			_putchar(format[i]), count++;
-	}
-	return (count);
+		return (count);
 	}
 	else
 		return (-1);
