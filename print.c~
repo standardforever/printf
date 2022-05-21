@@ -10,10 +10,11 @@ int _print(const char *format, va_list args)
 {
 	int i, j, checker = 0, count = 0;
 	const char *s;
+	unsigned int num;
 
 	checker = percentage(format);
 	if (checker == -1)
-		return (0);
+		return (-1);
 
 	if (*format != '\0')
 	{
@@ -33,6 +34,12 @@ int _print(const char *format, va_list args)
 						_putchar(s[j]);
 					i++;
 					break;
+				case 'b':
+					num = va_arg(args, unsigned int);
+					printf("%i", num);
+					i++;
+					binary(num);
+					break;
 			}
 		}
 		else
@@ -40,5 +47,5 @@ int _print(const char *format, va_list args)
 	}
 	return (count);
 	}
-	return (0);
+	return (-1);
 }
