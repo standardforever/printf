@@ -1,0 +1,54 @@
+#include "main.h"
+/*
+int _printf(const char *foramt, ...)
+{
+	va_list arg;
+	va_start(arg, format);
+	_print(format, arg);
+	va_end(arg);
+}
+
+int _print(const char *format, va_list)
+{
+
+}
+*/
+
+int subtract(int a, va_list args);
+
+int add(int a, ...)
+{
+	va_list args;
+	va_start(args, a);
+	int i, count, count1; 
+	
+	count1 = subtract(4, args);
+	printf("%i", count1);
+	for (i = 0; i < 5; i++)
+	{
+		count += va_arg(args, int);
+	}
+	va_end(args);
+	return (count);
+}
+
+int subtract(int a, va_list args)
+{
+	int i, count;
+	for (i = 0; i < 5; i++)
+	{
+		count -= va_arg(args, int);
+	}
+	return (count);
+}
+
+
+
+
+int main(void)
+{
+	int add1;
+	add1 = add(5, 1,2,3,4,5, 3,4,5, 5); 
+	printf("%i", add1);
+	return(0);
+}
