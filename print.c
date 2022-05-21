@@ -10,7 +10,16 @@ int _print(const char *format, va_list args)
 {
 	int i, j, count = 0;
 	const char *s;
+//	for (i = 0; format[i]; i++)
+//	{ 
+//		if (format[i] == '%' && format[i + 1] != 's')
+//		       return (0);
+//		if(format[i] == '%' && format[i + 1] != 'c')
+//			return (0);	
+//	}
 
+	if (*format != '\0')
+	{
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%' && format[i + 1] != '\0')
@@ -36,4 +45,12 @@ int _print(const char *format, va_list args)
 			_putchar(format[i]), count++;
 	}
 	return (count);
+
+	}
+	else
+	{ 
+		
+		return (0); 
+		
+	}
 }
