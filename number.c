@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * convert - converter function, a clone of itoa
- * @num: number
- * @base: base
+ * convert - function coverter , a clone of itoa
+ * @num: number to convert
+ * @base: base of conversion
  * @flags: argument flags
  * @params: paramater struct
  *
@@ -39,7 +39,7 @@ char *convert(long int num, int base, int flags, params_t *params)
 }
 
 /**
- * print_unsigned - prints unsigned integer numbers
+ * print_unsigned - prints the unsigned integer numbers
  * @ap: argument pointer
  * @params: the parameters struct
  *
@@ -64,7 +64,7 @@ int print_unsigned(va_list ap, params_t *params)
 /**
  * print_address - prints address
  * @ap: argument pointer
- * @params: the parameters struct
+ * @params: the parameter struct
  *
  * Return: bytes printed
  */
