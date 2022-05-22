@@ -1,55 +1,104 @@
 #include "main.h"
-
 /**
- * _print - it print the strings base on the conditions
- * @format: it takes in a string as an argument
- * @args: it a list of variadic function
- * Return: 0;
+ * print_character - prints character
+ * @arg: va_list parameter
+ * Description: print character
+ * Return: 1
  */
-int _print(const char *format, va_list args)
+int print_character(va_list arg)
 {
-	int i, j, checker = 0, count = 0, number;
-	const char *s;
+	int i;
 
-	checker = percentage(format);
-	if (checker == -1)
-		return (-1);
+	i = va_arg(arg, int);
+	_putchar(i);
 
-	if (*format != '\0')
+	return (1);
+}
+/**
+ * print_sign - print sign
+ * @arg: va_list parameter
+ * @base: base 10, 8, 16, 2 etc..
+ * Description: print numbers and signed
+ * Return: num of characters
+ */
+int print_sign(va_list arg, int base)
+{
+	int i = 0, cont = 0;
+	char *s;
+
+	i = va_arg(arg, int);
+	if (i < 0)
 	{
-	for (i = 0; format[i]; i++)
+		i = -(i);
+		_putchar('-');
+		cont += 1;
+	}
+	s = convert_to("0123456789ABCDEF", i, base);
+	_puts(s);
+	cont += _strlen(s);
+	return (cont);
+}
+/**
+ * print_unsign - print_unsign
+ * @arg: va_list parameter
+ * @base: base 10, 8, 16 etc..
+ * Description: print numbers without signed
+ * Return: num of characters
+ */
+int print_unsign(va_list arg, int base)
+{
+	int cont = 0;
+	unsigned int i;
+	char *s;
+
+	i = va_arg(arg, unsigned int);
+	s = convert_to("0123456789ABCDEF", i, base);
+	_puts(s);
+	cont = _strlen(s);
+
+	return (cont);
+
+}
+/**
+ * print_string - print string
+ * @arg: va_list parameter
+ * Description: print string
+ * Return: num of characters
+ */
+int print_string(va_list arg)
+{
+	char *s;
+	int cont = 0;
+
+	s = va_arg(arg, char *);
+	if (!s)
 	{
-		if (format[i] == '%')
-		{
-			switch (format[i + 1])
-			{
-				case 'c':
-					_putchar(va_arg(args, int));
-					i++, count++;
-					break;
-				case 's':
-					s = va_arg(args, const char *);
-					for (j = 0; s[j]; j++, count++)
-						_putchar(s[j]);
-					i++;
-					break;
-				case '%':
-					_putchar('%');
-					i++;
-					break;
-				case 'd':
-				case 'i':
-					number = va_arg(args, int);
-					long_val(number);
-					i++;
-					break;
-					
-			}
-		}
-		else
-			_putchar(format[i]), count++;
+		s = "(null)";
+		_puts(s);
+
+		return (_strlen(s));
 	}
-	return (count);
-	}
-	return (-1);
+	_puts(s);
+	cont = _strlen(s);
+	return (cont);
+}
+/**
+ * print_base16_upper_lower - print_base16_upper_lower
+ * @arg: va_list parameter
+ *@representation: pointer parameter
+ * Description: This function takes 0123456789ABCDEF or 0123456789abcdef
+ * in representation parameter for print hexadecimal format
+ * Return: num of characters
+ */
+int print_base16_upper_lower(va_list arg, char *representation)
+{
+	unsigned int i = 0, cont = 0;
+	char *s;
+
+	i = va_arg(arg, unsigned int);
+	s = convert_to(representation, i, 16);
+	_puts(s);
+	cont = _strlen(s);
+	return (cont);
+
 }

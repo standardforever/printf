@@ -1,17 +1,25 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef _MAIN_H
+#define _MAIN_H
 
-#include <stdio.h>
-#include <limits.h>
-#include <unistd.h>
 #include <stdarg.h>
-#include <stdlib.h>
-int _printf(const char *format, ...);
-int _print(const char *format, va_list args);
-int _putchar(char c);
-int percentage(const char *format);
-unsigned int binary(unsigned int n);
-int long_val(int n);
 
+int _putchar(char c);
+void _puts(char *str);
+int _strlen(char *s);
+int _printf(const char *format, ...);
+char *convert_to(char representation[], unsigned int num, int base);
+int funct_mgr(char c, va_list arg);
+int _switch(char c, va_list arg);
+int print_character(va_list arg);
+int print_sign(va_list arg, int base);
+int print_unsign(va_list arg, int base);
+int print_string(va_list arg);
+int print_ptr(va_list arg);
+int print_rot13(va_list arg);
+int print_rev(va_list arg);
+int print_base16_upper_lower(va_list arg, char *representation);
+int loop_format(va_list arg, const char *string);
+int call_funct_mgr(char aux, va_list arg);
+int check_percent(int *flag, char aux);
 
 #endif
