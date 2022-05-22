@@ -13,11 +13,9 @@ int _printf(const char *format, ...)
 	va_list chara;
 	int count;
 
-	if (!format)
-		return (-1);
+
 	va_start(chara, format);
 	count = _print(format, chara);
-	_putchar(-1);
 	va_end(chara);
 	return (count);
 }

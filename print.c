@@ -8,13 +8,14 @@
  */
 int _print(const char *format, va_list args)
 {
-	int i, j, checker = 0, count = 0, number;
+	int i, j, checker = 0, count = 0;
 	const char *s;
 
 	checker = percentage(format);
 	if (checker == -1)
 		return (-1);
-
+	if (*format == '\0')
+		return (0);
 	if (*format != '\0')
 	{
 	for (i = 0; format[i]; i++)
@@ -35,15 +36,8 @@ int _print(const char *format, va_list args)
 					break;
 				case '%':
 					_putchar('%');
-					i++;
+					i++, count++;
 					break;
-				case 'd':
-				case 'i':
-					number = va_arg(args, int);
-					long_val(number);
-					i++;
-					break;
-					
 			}
 		}
 		else

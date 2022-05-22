@@ -12,6 +12,7 @@ int percentage(const char *format)
 {
 	int i;
 
+
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
@@ -23,8 +24,6 @@ int percentage(const char *format)
 					break;
 				case 's':
 				case 'c':
-				case 'd':
-				case 'i':
 					break;
 				default:
 					return (-1);

@@ -23,7 +23,6 @@ int percentage(const char *format)
 					break;
 				case 's':
 				case 'c':
-				case 'd':
 					break;
 				default:
 					return (-1);
