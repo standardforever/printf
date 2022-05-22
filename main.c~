@@ -1,7 +1,7 @@
 #include "main.h"
 
-int main(void)
+int main()
 {
-	_printf("%s,", "sst");
+	_printf("hello %s", 's');
 	return (0);
 }

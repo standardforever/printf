@@ -15,6 +15,11 @@ int _print(const char *format, va_list args)
 	if (checker == -1)
 		return (-1);
 
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+
 	if (*format != '\0')
 	{
 	for (i = 0; format[i]; i++)
