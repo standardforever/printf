@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 
 	va_start(chara, format);
 	count = _print(format, chara);
+	_putchar(-1);
 	va_end(chara);
-	free(&count);
 	return (count);
 }
