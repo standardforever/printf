@@ -11,7 +11,7 @@ int _print(const char *format, va_list args);
 int _putchar(char c);
 int percentage(const char *format);
 unsigned int binary(unsigned int n);
-void long_val(int n);
+int long_val(int n);
 
 
 #endif

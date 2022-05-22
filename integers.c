@@ -1,6 +1,6 @@
 #include "main.h"
 
-void long_val(int n)
+int long_val(int n)
 {
 	if (n < 0)
 	{
@@ -10,4 +10,5 @@ void long_val(int n)
 	if (n > 9)
 		long_val(n / 10);
 	_putchar(n % 10 + '0');
+	return(0);
 }
