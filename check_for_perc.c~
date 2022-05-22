@@ -18,11 +18,11 @@ int percentage(const char *format)
 		{
 			switch (format[i + 1])
 			{
-				/*case '%':
+				case '%':
 					i++;
-					break;*/
-				case 'c':
 					break;
+				case 's':
+				case 'c':
 				case 'd':
 					break;
 				default:
