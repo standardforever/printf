@@ -5,7 +5,7 @@
  *@c: character to find
  *@arg: va_list type
  *Description: This function call other functions
- * when the character is found
+ * when the character of this function is found
  *Return: count of printed characters
  */
 int funct_mgr(char c, va_list arg)
