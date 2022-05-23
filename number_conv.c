@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_hex - prints unsigned hexdecimal numbers in lowercase
+ * print_hex - prints unsigned hex numbers in lowercase
  * @ap: the argument pointer
  * @params: the parameters struct
  *
@@ -31,7 +31,7 @@ int print_hex(va_list ap, params_t *params)
 }
 
 /**
- * print_HEX - prints unsigned hexadecimal numbers in uppercase
+ * print_HEX - prints unsigned hex numbers in uppercase
  * @ap: the argument pointer
  * @params: the parameters struct
  *
@@ -60,7 +60,7 @@ int print_HEX(va_list ap, params_t *params)
 	return (c += print_number(str, params));
 }
 /**
- * print_binary - prints unsigned binary numbers
+ * print_binary - prints unsigned binary number
  * @ap: the argument pointer
  * @params: the parameters struct
  *
