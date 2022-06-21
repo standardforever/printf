@@ -39,7 +39,7 @@ int _int(va_list op)
  * Return: 1
  */
 
-int _percentage(va_list op)
+int _percentage(va_list op __attribute__((unused)))
 {
 	_putchar('%');
 	return (1);

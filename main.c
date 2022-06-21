@@ -8,11 +8,11 @@
 
 int _printf(const char *format, ...)
 {
-	int len, i, count = 0;
+	int i, count = 0;
 	va_list op;
 
 	va_start(op, format);
-	if (!format || (format[0] == '%' && !format[i]))
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
